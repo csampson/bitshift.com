@@ -38,6 +38,7 @@ a {
   background: #47955A;
   color: #FFF;
   font: inherit;
+  font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
   padding: 1rem;
@@ -100,8 +101,8 @@ a {
   width: 40rem;
   margin: 0 auto 1ex;
 }
+
 .check-us-out {
-  font-size: 90%;
   padding-left: 7rem;
   padding-right: 7rem;
   margin-top: 3rem;
@@ -129,9 +130,9 @@ a {
   color: #3A4145;
   font-size: 115%;
   width: 75rem;
-  padding: 5rem 0;
+  min-height: 50vh;
+  padding: 5vh 0;
   margin: 2rem auto 0;
-  display: table;
 }
 
 .who-we-are {
@@ -180,7 +181,8 @@ a {
 .services {
   background: #373739;
   text-align: center;
-  padding: 2rem 0;
+  min-height: 50vh;
+  padding: 2vh 0;
 }
 
 .services > div {
@@ -191,6 +193,7 @@ a {
 .services h2 {
   border-bottom: 1px solid #444;
   line-height: 0;
+  padding-top: 1em;
 }
 
 .services h2 span {
@@ -211,6 +214,12 @@ a {
 .services .service ul {
   list-style: none;
   padding: 0;
+}
+
+.contact-us {
+  padding-left: 7rem;
+  padding-right: 7rem;
+  margin-top: 3rem;
 }
 
 .get-in-touch {
