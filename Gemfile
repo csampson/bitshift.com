@@ -5,5 +5,5 @@ gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-assetpack'
 gem 'sass'
-gem 'bourbon'
+gem 'bourbon', '~>3.2.x'
 
