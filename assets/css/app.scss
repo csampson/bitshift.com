@@ -46,6 +46,16 @@ a {
   display: inline-block;
 }
 
+.page-section {
+  @include display(flex);
+  @include align-items(center);
+
+  .page-section-content {
+    width: 75rem;
+    margin: 0 auto;
+  }
+}
+
 .introduction {
   background: #404449;
   min-height: 100vh;
@@ -127,12 +137,11 @@ a {
 }
 
 .about-us {
+  @extend .page-section;
   color: #3A4145;
   font-size: 115%;
-  width: 75rem;
   min-height: 50vh;
-  padding: 5vh 0;
-  margin: 2rem auto 0;
+  margin: 0.5rem auto;
 }
 
 .who-we-are {
@@ -179,15 +188,11 @@ a {
 }
 
 .services {
+  @extend .page-section;
   background: #373739;
   text-align: center;
   min-height: 50vh;
   padding: 2vh 0;
-}
-
-.services > div {
-  width: 75rem;
-  margin: 0 auto;
 }
 
 .services h2 {
@@ -198,7 +203,7 @@ a {
 
 .services h2 span {
   background: #373739;
-  padding: 0 1ex;
+  padding: 0 1rem;
 }
 
 .services .service {
@@ -219,15 +224,18 @@ a {
 .contact-us {
   padding-left: 7rem;
   padding-right: 7rem;
-  margin-top: 3rem;
+  margin: 1rem auto 0;
+  display: table;
 }
 
 .get-in-touch {
+  @extend .page-section;
   background: #404449;
   color: #F2F2F3;
   font-size: 115%;
   text-align: center;
-  padding: 4rem 0 8rem;
+  height: 100vh;
+  padding: 1rem;
   position: relative;
 }
 
@@ -259,7 +267,7 @@ a {
   font: inherit;
   font-size: 85%;
   padding: 1rem;
-  margin: 0 0 1ex;
+  margin: 0 0 1rem;
   width: 35rem;
 
   &:focus {
