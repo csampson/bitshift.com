@@ -1,11 +1,10 @@
-@import 'bourbon/bourbon';
-
 @include font-face(EntypoRegular, '/fonts/entypo');
 @include font-face(EntypoSocialRegular, '/fonts/entypo-social');
 
 .entypo {
 	font-family: 'EntypoRegular';
 	font-size: 2em;
+	font-style: normal;
 	font-weight: normal;
 	line-height: 0;
 }

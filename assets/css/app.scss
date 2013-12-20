@@ -1,11 +1,5 @@
-@import 'bourbon/bourbon';
-@import url("http://weloveiconfonts.com/api/?family=entypo");
-
-/* entypo */
-[class*='entypo-']:before {
-  font-family: 'entypo', sans-serif;
-  font-style: normal;
-}
+@import "bourbon/bourbon";
+@import "entypo";
 
 * {
   @include box-sizing(border-box);
@@ -167,9 +161,10 @@ a {
 }
 
 .how-we-roll ul {
+  @include clearfix;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 3rem 0 0;
 }
 
 .how-we-roll li {
@@ -180,8 +175,8 @@ a {
   margin-left: 2rem;
 }
 
-.how-we-roll i {
-  font-size: 150%;
+.how-we-roll .entypo {
+  font-size: 4rem;
   text-align: center;
   display: block;
   margin: 0 auto 1ex;
@@ -224,7 +219,7 @@ a {
 .contact-us {
   padding-left: 7rem;
   padding-right: 7rem;
-  margin: 1rem auto 0;
+  margin: 2rem auto 0;
   display: table;
 }
 
