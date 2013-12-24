@@ -5,6 +5,7 @@
 @import "base";
 
 .introduction {
+  @extend .page-section;
   background: #404449;
   min-height: 100vh;
   padding-bottom: 2em;
@@ -24,9 +25,8 @@
   top: 100%;
 }
 
-.page-header {
+.introduction-header {
   text-align: center;
-  padding-top: 4em;
   padding-bottom: 2em;
 
   @include respond-to(medium-screen) {
@@ -34,11 +34,11 @@
   }
 }
 
-.page-header p {
+.introduction-header p {
   margin: 0;
 }
 
-.page-header .spiel {
+.introduction-header .spiel {
   text-shadow: 0 2px rgba(0,0,0,0.25);
   font-size: 300%;
   margin: 0 auto;
@@ -50,7 +50,7 @@
   }
 }
 
-.page-header .spiel::after {
+.introduction-header .spiel::after {
   content: '';
   border-bottom: 1px solid #3C7A4C;
   width: 35%;
@@ -58,7 +58,7 @@
   display: block;
 }
 
-.page-header .sub-spiel {
+.introduction-header .sub-spiel {
   font-size: 150%;
   width: 25em;
   margin: 0 auto 1ex;
