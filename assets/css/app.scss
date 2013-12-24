@@ -1,60 +1,8 @@
 @import "bourbon/bourbon";
 @import "entypo";
 
-%list-reset {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-* {
-  @include box-sizing(border-box);
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  background: #404449;
-  color: #F2F2F3;
-  font-family: Lato, sans-serif;
-  margin: 0;
-}
-
-h2 {
-  font-size: 125%;
-}
-
-a {
-  border-bottom: 1px dotted;
-  color: inherit;
-  text-decoration: none;
-}
-
-.btn {
-  box-shadow: 0 -5px 0 0 #3C7A4C inset;
-  border: none;
-  background: #47955A;
-  color: #FFF;
-  font: inherit;
-  font-size: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
-  padding: 1rem;
-  margin: 0;
-  display: inline-block;
-}
-
-.page-section {
-  @include display(flex);
-  @include align-items(center);
-
-  .page-section-content {
-    width: 75rem;
-    margin: 0 auto;
-  }
-}
+@import "utility";
+@import "base";
 
 .introduction {
   background: #404449;
@@ -80,11 +28,10 @@ a {
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 2rem;
-}
 
-.page-header h1 {
-  font-size: 200%;
-  font-weight: normal;
+  @include respond-to(medium-screen) {
+    padding: 2rem 0;
+  }
 }
 
 .page-header p {
@@ -96,6 +43,11 @@ a {
   font-size: 500%;
   margin: 0 auto;
   display: table;
+
+  @include respond-to(small-screen) {
+    text-shadow: none;
+    font-size: 150%;
+  }
 }
 
 .page-header .spiel::after {
@@ -110,12 +62,22 @@ a {
   font-size: 150%;
   width: 40rem;
   margin: 0 auto 1ex;
+
+  @include respond-to(small-screen) {
+    font-size: 100%;
+    width: auto;
+  }
 }
 
 .check-us-out {
   padding-left: 7rem;
   padding-right: 7rem;
   margin-top: 3rem;
+
+  @include respond-to(tiny-screen) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
 .aspect-list {
@@ -141,7 +103,13 @@ a {
   color: #3A4145;
   font-size: 115%;
   min-height: 50vh;
-  margin: 0.5rem auto;
+  padding: 1rem 1rem 2rem;
+  margin-top: 1rem; // negate top arrow
+
+  @include respond-to(medium-screen) {
+    font-size: 100%;
+    min-height: 0;
+  }
 }
 
 .who-we-are {
@@ -150,6 +118,22 @@ a {
   padding-right: 2rem;
   margin-right: 2rem;
   float: left;
+
+  @include respond-to(medium-screen) {
+    padding-right: 1rem;
+    margin-right: 1rem;
+  }
+
+  @include respond-to(small-screen) {
+    border-right: none;
+    border-bottom: 1px solid #CCC;
+    width: auto;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    float: none;
+  }
 }
 
 .who-we-are h2 {
@@ -159,6 +143,11 @@ a {
 
 .how-we-roll {
   display: table;
+
+  @include respond-to(small-screen) {
+    text-align: center;
+    display: block;
+  }
 }
 
 .how-we-roll h2 {
@@ -169,22 +158,40 @@ a {
 .how-we-roll ul {
   @extend %list-reset;
   @include clearfix;
-  margin: 3rem 0 0;
 }
 
 .how-we-roll li {
   float: left;
+
+  @include respond-to(small-screen) {
+    float: none;
+    display: inline-block;
+  }
+
+  @include respond-to(small-screen) {
+    margin: 0.5rem 0;
+    display: block;
+  }
 }
 
 .how-we-roll li + li {
   margin-left: 2rem;
+
+  @include respond-to(medium-screen) {
+    margin-left: 1rem;
+  }
+
+  @include respond-to(small-screen) {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
 }
 
 .how-we-roll .entypo {
   font-size: 4rem;
   text-align: center;
   display: block;
-  margin: 0 auto 1ex;
+  margin: 0.25em 0;
 }
 
 .services {
@@ -192,7 +199,7 @@ a {
   background: #373739;
   text-align: center;
   min-height: 50vh;
-  padding: 2vh 0;
+  padding: 2rem 0;
 }
 
 .services h2 {
@@ -206,18 +213,45 @@ a {
   padding: 0 1rem;
 }
 
+.services .services-list {
+  @extend %list-reset;
+
+  @include respond-to(tiny-screen) {
+    width: 100%;
+    padding-top: 1rem;
+    display: table;
+  }
+}
+
 .services .service {
   margin-right: 3em;
   display: inline-block;
   vertical-align: top;
+
+  @include respond-to(tiny-screen) {
+    text-align: left;
+    margin-right: 0;
+    display: table-row;
+  }
 }
 
-.services h3 {
-  font-size: 100%;
+.services .service h3 {
+  font-size: 1rem;
+
+  @include respond-to(tiny-screen) {
+    text-align: right;
+    padding-right: 1rem;
+    display: table-cell;
+  }
 }
 
 .services .service ul {
   @extend %list-reset;
+
+  @include respond-to(tiny-screen) {
+    display: table-cell;
+    padding-bottom: 1rem;
+  }
 }
 
 .contact-us {
@@ -236,6 +270,10 @@ a {
   height: 100vh;
   padding: 1rem;
   position: relative;
+
+  @include respond-to(medium-screen) {
+    font-size: 100%;
+  }
 }
 
 .get-in-touch .page-section-content {
@@ -255,6 +293,11 @@ a {
   width: 100%;
   padding-left: 10rem;
   padding-right: 10rem;
+
+  @include respond-to(small-screen) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .contact-form-errors {

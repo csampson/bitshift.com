@@ -1,0 +1,56 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #404449;
+  color: #F2F2F3;
+  font-family: Lato, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 125%;
+}
+
+a {
+  border-bottom: 1px dotted;
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  box-shadow: 0 -5px 0 0 #3C7A4C inset;
+  border: none;
+  background: #47955A;
+  color: #FFF;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 0;
+  display: inline-block;
+}
+
+.page-section {
+  @include display(flex);
+  @include align-items(center);
+
+  .page-section-content {
+    width: 75rem;
+    margin: 0 auto;
+
+    @include respond-to(medium-screen) {
+      width: auto;
+    }
+  }
+}
