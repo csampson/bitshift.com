@@ -1,152 +1,137 @@
-<!DOCTYPE html>
-<html lang='en-US'>
-<head>
-  <meta charset='utf-8' />
-  <title>BitShift</title>
-  <%= css :app %>
-  <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
-  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-</head>
-<body>
-  <section class='introduction'>
-    <header class='page-header'>
-      <h1><%= img '/images/logo.png', :alt => 'BitShift' %></h1>
-      <p class='spiel'>We build cool stuff.</p>
-      <p class='sub-spiel'>We're a literal-not-figurative dynamic team of developers and designers that provides cutting-edge web solutions.</p>
-      <p class='sub-spiel'>Yes, we accept <a href='http://bitcoin.org'>Bitcoin</a>.</p>
-      <a class='check-us-out btn' href='#'>CHECK US OUT</a>
+<section class='introduction'>
+  <header class='page-header'>
+    <h1><%= img '/images/logo.png', :alt => 'BitShift' %></h1>
+    <p class='spiel'>We build cool stuff.</p>
+    <p class='sub-spiel'>We're a literal-not-figurative dynamic team of developers and designers that provides cutting-edge web solutions.</p>
+    <p class='sub-spiel'>Yes, we accept <a href='http://bitcoin.org'>Bitcoin</a>.</p>
+    <a class='check-us-out btn' href='#'>CHECK US OUT</a>
+  </header>
+
+  <ul class='aspect-list'>
+    <li class='aspect'>Ruby</li>
+    <li class='aspect'>JavaScript</li>
+    <li class='aspect'>CSS</li>
+    <li class='aspect'>Design</li>
+  </ul>
+</section>
+
+<section class='about-us'>
+  <div class='page-section-content'>
+    <div class='who-we-are'>
+      <h2>Who We Are</h2>
+      <p>We are truly a different type of web development consulting company. we have a team of brilliant developers and designers that use our dynamic, arbitrary individual tasking system to complete jobs in the most efficient way possible.</p>
+    </div>
+
+    <div class='how-we-roll'>
+      <h2>How We Roll</h2>
+
+      <ul>
+        <li>
+          <i class='entypo line-graph'></i>
+          We deliver results
+        </li>
+
+        <li>
+          <i class='entypo progress-2'></i>
+          Task-driven
+        </li>
+
+        <li>
+          <i class='entypo heart'></i>
+          We love what we do
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class='services'>
+  <div class='page-section-content'>
+    <h2><span>Services</span></h2>
+
+    <div class='service'>
+      <h3>Ruby</h3>
+
+      <ul>
+        <li>Ruby on Rails</li>
+        <li>Sinatra</li>
+      </ul>
+    </div>
+
+    <div class='service'>
+      <h3>JavaScript</h3>
+
+      <ul>
+        <li>CoffeeScript</li>
+        <li>node.js</li>
+        <li>express</li>
+        <li>jQuery</li>
+        <li>Meteor</li>
+      </ul>
+    </div>
+
+    <div class='service'>
+      <h3>CSS</h3>
+
+      <ul>
+        <li>Sass</li>
+        <li>Less</li>
+      </ul>
+    </div>
+
+    <div class='service'>
+      <h3>Design</h3>
+
+      <ul>
+        <li>Photoshop</li>
+        <li>Illustrator</li>
+      </ul>
+    </div>
+
+    <div class='service'>
+      <h3>Git</h3>
+
+      <ul>
+        <li>(+ GitHub)</li>
+      </ul>
+    </div>
+
+    <a class='contact-us btn' href='#'>Contact us</a>
+  </div>
+</section>
+
+<section class='get-in-touch'>
+  <div class='page-section-content'>
+    <%= img '/images/minimal-logo.png', :alt => '' %>
+    <header>
+      <h2>Have a project for us?</h2>
+      <p>We'd love to hear from you.</p>
     </header>
 
-    <ul class='aspect-list'>
-      <li class='aspect'>Ruby</li>
-      <li class='aspect'>JavaScript</li>
-      <li class='aspect'>CSS</li>
-      <li class='aspect'>Design</li>
-    </ul>
-  </section>
+    <% if form.failed? %>
+      <ul class='contact-form-errors'>
+        <% form.messages(:contact).each do |message|  %>
+          <li><i class='entypo squared-cross'></i> <%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-  <section class='about-us'>
-    <div class='page-section-content'>
-      <div class='who-we-are'>
-        <h2>Who We Are</h2>
-        <p>We are truly a different type of web development consulting company. we have a team of brilliant developers and designers that use our dynamic, arbitrary individual tasking system to complete jobs in the most efficient way possible.</p>
-      </div>
+    <form class='contact-form' method='post' action='/contact'>
+      <ul>
+        <li>
+          <input type='text' placeholder='Name' name='name' required />
+        </li>
 
-      <div class='how-we-roll'>
-        <h2>How We Roll</h2>
+        <li>
+          <input type='email' placeholder='Email' name='email' required />
+        </li>
 
-        <ul>
-          <li>
-            <i class='entypo line-graph'></i>
-            We deliver results
-          </li>
+        <li>
+          <textarea placeholder='Message' rows='10' name='message' required></textarea>
+        </li>
+      </ul>
 
-          <li>
-            <i class='entypo progress-2'></i>
-            Task-driven
-          </li>
-
-          <li>
-            <i class='entypo heart'></i>
-            We love what we do
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class='services'>
-    <div class='page-section-content'>
-      <h2><span>Services</span></h2>
-
-      <div class='service'>
-        <h3>Ruby</h3>
-
-        <ul>
-          <li>Ruby on Rails</li>
-          <li>Sinatra</li>
-        </ul>
-      </div>
-
-      <div class='service'>
-        <h3>JavaScript</h3>
-
-        <ul>
-          <li>CoffeeScript</li>
-          <li>node.js</li>
-          <li>express</li>
-          <li>jQuery</li>
-          <li>Meteor</li>
-        </ul>
-      </div>
-
-      <div class='service'>
-        <h3>CSS</h3>
-
-        <ul>
-          <li>Sass</li>
-          <li>Less</li>
-        </ul>
-      </div>
-
-      <div class='service'>
-        <h3>Design</h3>
-
-        <ul>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-        </ul>
-      </div>
-
-      <div class='service'>
-        <h3>Git</h3>
-
-        <ul>
-          <li>(+ GitHub)</li>
-        </ul>
-      </div>
-
-      <a class='contact-us btn' href='#'>Contact us</a>
-    </div>
-  </section>
-
-  <section class='get-in-touch'>
-    <div class='page-section-content'>
-      <%= img '/images/minimal-logo.png', :alt => '' %>
-      <header>
-        <h2>Have a project for us?</h2>
-        <p>We'd love to hear from you.</p>
-      </header>
-
-      <% if form.failed? %>
-        <ul class='contact-form-errors'>
-          <% form.messages(:contact).each do |message|  %>
-            <li><i class='entypo squared-cross'></i> <%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <form class='contact-form' method='post' action='/contact'>
-        <ul>
-          <li>
-            <input type='text' placeholder='Name' name='name' required />
-          </li>
-
-          <li>
-            <input type='email' placeholder='Email' name='email' required />
-          </li>
-
-          <li>
-            <textarea placeholder='Message' rows='10' name='message' required></textarea>
-          </li>
-        </ul>
-
-        <button type='submit' class='btn'>Get in touch</button>
-      </form>
-    </div>
-  </section>
-
-  <%= js :app %>
-</body>
-</html>
-
+      <button type='submit' class='btn'>Get in touch</button>
+    </form>
+  </div>
+</section>

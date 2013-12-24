@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  background: #F2F3F3;
+  background: #404449;
   color: #F2F2F3;
   font-family: Lato, sans-serif;
   margin: 0;
@@ -137,6 +137,7 @@ a {
 
 .about-us {
   @extend .page-section;
+  background: #F2F3F3;
   color: #3A4145;
   font-size: 115%;
   min-height: 50vh;
@@ -286,5 +287,20 @@ a {
 
   &:focus {
     outline: #96989A solid 2px;
+  }
+}
+
+.message-sent {
+  text-align: center;
+  display: table;
+  margin: 5em auto;
+
+  h1 {
+    font-size: 150%;
+  }
+
+  .return-home {
+    width: 100%;
+    margin-top: 2rem;
   }
 }

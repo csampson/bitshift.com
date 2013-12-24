@@ -12,8 +12,8 @@ class App < Sinatra::Base
     serve '/images', {:from => 'assets/images'}
     serve '/fonts',  {:from => 'assets/fonts'}
 
-    css :app,   ['css/app.css']
-    js :app, ['js/app.js']
+    css :app, ['css/app.css']
+    js :app,  ['js/app.js']
 
     css_compression :sass
   }
@@ -29,8 +29,8 @@ class App < Sinatra::Base
   post '/contact' do
     form do
       filters :strip
-      field   :name, :present => true
-      field   :email, :present => true, :email => true
+      field   :name,    :present => true
+      field   :email,   :present => true, :email => true
       field   :message, :present => true
     end
 
@@ -38,7 +38,7 @@ class App < Sinatra::Base
       fill_in_form erb(:index)
     else
       # TODO: send email
-      # TODO: contact success page
+      erb(:message_sent)
     end
   end
 end
