@@ -7,30 +7,30 @@
 .introduction {
   background: #404449;
   min-height: 100vh;
-  padding-bottom: 2rem;
+  padding-bottom: 2em;
   position: relative;
 }
 
 .introduction::after {
   content: '';
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  border-top: 0.5rem solid #404449;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 0.5em solid #404449;
   position: absolute;
   width: 0;
   height: 0;
-  margin-left: -1rem;
+  margin-left: -1em;
   left: 50%;
   top: 100%;
 }
 
 .page-header {
   text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-top: 4em;
+  padding-bottom: 2em;
 
   @include respond-to(medium-screen) {
-    padding: 2rem 0;
+    padding: 2em 0;
   }
 }
 
@@ -40,7 +40,7 @@
 
 .page-header .spiel {
   text-shadow: 0 2px rgba(0,0,0,0.25);
-  font-size: 500%;
+  font-size: 300%;
   margin: 0 auto;
   display: table;
 
@@ -60,23 +60,26 @@
 
 .page-header .sub-spiel {
   font-size: 150%;
-  width: 40rem;
+  width: 25em;
   margin: 0 auto 1ex;
 
   @include respond-to(small-screen) {
     font-size: 100%;
+  }
+
+  @include respond-to(tiny-screen) {
     width: auto;
   }
 }
 
 .check-us-out {
-  padding-left: 7rem;
-  padding-right: 7rem;
-  margin-top: 3rem;
+  padding-left: 7em;
+  padding-right: 7em;
+  margin-top: 3em;
 
   @include respond-to(tiny-screen) {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 5em;
+    padding-right: 5em;
   }
 }
 
@@ -93,8 +96,8 @@
 
 .aspect-list .aspect + .aspect {
   border-left: 1px solid #777;
-  padding-left: 1rem;
-  margin-left: 1rem;
+  padding-left: 1em;
+  margin-left: 1em;
 }
 
 .about-us {
@@ -103,8 +106,8 @@
   color: #3A4145;
   font-size: 115%;
   min-height: 50vh;
-  padding: 1rem 1rem 2rem;
-  margin-top: 1rem; // negate top arrow
+  padding: 1em 1em 2em;
+  margin-top: 1em; // negate top arrow
 
   @include respond-to(medium-screen) {
     font-size: 100%;
@@ -115,13 +118,13 @@
 .who-we-are {
   border-right: 1px solid #CCC;
   width: 50%;
-  padding-right: 2rem;
-  margin-right: 2rem;
+  padding-right: 2em;
+  margin-right: 2em;
   float: left;
 
   @include respond-to(medium-screen) {
-    padding-right: 1rem;
-    margin-right: 1rem;
+    padding-right: 1em;
+    margin-right: 1em;
   }
 
   @include respond-to(small-screen) {
@@ -129,16 +132,16 @@
     border-bottom: 1px solid #CCC;
     width: auto;
     padding-right: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     float: none;
   }
 }
 
 .who-we-are h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 .how-we-roll {
@@ -152,7 +155,7 @@
 
 .how-we-roll h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 .how-we-roll ul {
@@ -168,27 +171,22 @@
     display: inline-block;
   }
 
-  @include respond-to(small-screen) {
-    margin: 0.5rem 0;
+  @include respond-to(tiny-screen) {
+    margin-top: 2em;
     display: block;
   }
 }
 
 .how-we-roll li + li {
-  margin-left: 2rem;
+  margin-left: 2em;
 
   @include respond-to(medium-screen) {
-    margin-left: 1rem;
-  }
-
-  @include respond-to(small-screen) {
-    margin-left: 0;
-    margin-top: 2rem;
+    margin-left: 0.5em;
   }
 }
 
 .how-we-roll .entypo {
-  font-size: 4rem;
+  font-size: 400%;
   text-align: center;
   display: block;
   margin: 0.25em 0;
@@ -199,7 +197,7 @@
   background: #373739;
   text-align: center;
   min-height: 50vh;
-  padding: 2rem 0;
+  padding-bottom: 2em;
 }
 
 .services h2 {
@@ -210,7 +208,7 @@
 
 .services h2 span {
   background: #373739;
-  padding: 0 1rem;
+  padding: 0 1em;
 }
 
 .services .services-list {
@@ -218,7 +216,7 @@
 
   @include respond-to(tiny-screen) {
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 1em;
     display: table;
   }
 }
@@ -236,11 +234,11 @@
 }
 
 .services .service h3 {
-  font-size: 1rem;
+  font-size: 100%;
 
   @include respond-to(tiny-screen) {
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 1em;
     display: table-cell;
   }
 }
@@ -250,14 +248,14 @@
 
   @include respond-to(tiny-screen) {
     display: table-cell;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
   }
 }
 
 .contact-us {
-  padding-left: 7rem;
-  padding-right: 7rem;
-  margin: 2rem auto 0;
+  padding-left: 7em;
+  padding-right: 7em;
+  margin: 2em auto 0;
   display: table;
 }
 
@@ -267,8 +265,8 @@
   color: #F2F2F3;
   font-size: 115%;
   text-align: center;
-  height: 100vh;
-  padding: 1rem;
+  min-height: 100vh;
+  padding: 1em;
   position: relative;
 
   @include respond-to(medium-screen) {
@@ -277,26 +275,26 @@
 }
 
 .get-in-touch .page-section-content {
-  width: 30rem;
+  width: 30em;
 }
 
 .get-in-touch h2 {
   font-size: 150%;
-  margin: 2rem 0 0;
+  margin: 1em 0 0;
 }
 
 .get-in-touch p {
-  margin: 1ex 0 2rem;
+  margin: 1ex 0 2em;
 }
 
 .get-in-touch .btn {
   width: 100%;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 10em;
+  padding-right: 10em;
 
   @include respond-to(small-screen) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 
@@ -305,8 +303,8 @@
   background: rgba(0,0,0,0.25);
   text-align: left;
   font-size: 85%;
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 1em;
+  margin: 1em 0;
 
   .squared-cross {
     color: #6C607C;
@@ -319,18 +317,8 @@
 }
 
 .contact-form input, .contact-form textarea {
-  border: none;
-  background: rgba(50,50,50,0.5);
-  color: #F2F2F3;
-  font: inherit;
-  font-size: 85%;
-  padding: 1rem;
-  margin: 0 0 1rem;
+  margin: 0 0 1em;
   width: 100%;
-
-  &:focus {
-    outline: #96989A solid 2px;
-  }
 }
 
 .message-sent {
@@ -344,6 +332,6 @@
 
   .return-home {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 2em;
   }
 }
