@@ -1,0 +1,9 @@
+--- 
+contact: 
+  email: 
+    email: "The email address you entered is invalid."
+    present: "Enter your email address."
+  message:
+    present: "Enter your message."
+  name:
+    present: "Enter your name."
