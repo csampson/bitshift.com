@@ -7,14 +7,14 @@
 // Apply rules based on loose screen sizes(widths)
 @mixin respond-to($screen-size) {
 	@if $screen-size == tiny-screen {
-		@media (max-width: 35rem) { @content; }
+		@media (max-width: 35em) { @content; }
 	}
 
 	@if $screen-size == small-screen {
-		@media (max-width: 50rem) { @content; }
+		@media (max-width: 50em) { @content; }
 	}
 
   @if $screen-size == medium-screen {
-    @media (max-width: 65rem) { @content; }
+    @media (max-width: 65em) { @content; }
   }
 }

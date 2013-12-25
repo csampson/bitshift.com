@@ -61,11 +61,10 @@ a {
 
   .page-section-content {
     width: 75em;
-    width: 75rem;
     margin: 0 auto;
 
     @include respond-to(medium-screen) {
-      width: auto;
+      width: 100%;
     }
   }
 }

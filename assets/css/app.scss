@@ -7,8 +7,8 @@
 .introduction {
   @extend .page-section;
   background: #404449;
-  min-height: 100vh;
-  padding-bottom: 2em;
+  min-height: 100vmin;
+  padding: 1em 1em 2em;
   position: relative;
 }
 
@@ -105,8 +105,8 @@
   background: #F2F3F3;
   color: #3A4145;
   font-size: 115%;
-  min-height: 50vh;
-  padding: 1em 1em 2em;
+  min-height: 50vmin;
+  padding: 1em 2em 2em;
   margin-top: 1em; // negate top arrow
 
   @include respond-to(medium-screen) {
@@ -196,7 +196,7 @@
   @extend .page-section;
   background: #373739;
   text-align: center;
-  min-height: 50vh;
+  min-height: 50vmin;
   padding-bottom: 2em;
 }
 
@@ -265,7 +265,7 @@
   color: #F2F2F3;
   font-size: 115%;
   text-align: center;
-  min-height: 100vh;
+  min-height: 100vmin;
   padding: 1em;
   position: relative;
 
@@ -276,6 +276,10 @@
 
 .get-in-touch .page-section-content {
   width: 30em;
+
+  @include respond-to(tiny-screen) {
+    width: 100%;
+  }
 }
 
 .get-in-touch h2 {
