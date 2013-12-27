@@ -5,20 +5,19 @@
 @import "base";
 
 .introduction {
-  @extend .page-section;
-  min-height: 100vmin;
-  padding: 1em 1em 2em;
+  text-shadow: 0 1px rgba(0,0,0,0.25);
+  padding: 2em 1em;
   position: relative;
 
   &::after {
     content: '';
-    border-left: 1em solid transparent;
-    border-right: 1em solid transparent;
-    border-top: 0.5em solid #404449;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 8px solid #404449;
     position: absolute;
     width: 0;
     height: 0;
-    margin-left: -1em;
+    margin-left: -16px;
     left: 50%;
     top: 100%;
   }
@@ -50,7 +49,7 @@
 
   .introduction-header .spiel::after {
     content: '';
-    border-bottom: 1px solid #3C7A4C;
+    border-bottom: 1px solid $copper-rust;
     width: 35%;
     margin: 0.5em auto;
     display: block;
@@ -69,91 +68,49 @@
       width: auto;
     }
   }
-}
 
-.check-us-out {
-  padding-left: 7em;
-  padding-right: 7em;
-  margin-top: 3em;
+  .check-us-out {
+    padding-left: 7em;
+    padding-right: 7em;
+    margin-top: 3em;
 
-  @include respond-to(tiny-screen) {
-    padding-left: 5em;
-    padding-right: 5em;
-  }
-}
-
-.aspect-list {
-  @extend %list-reset;
-  line-height: 1;
-  margin: 0 auto;
-  display: table;
-
-  .aspect {
-    float: left;
+    @include respond-to(tiny-screen) {
+      padding-left: 5em;
+      padding-right: 5em;
+    }
   }
 
-  .aspect + .aspect {
-    border-left: 1px solid #777;
-    padding-left: 1em;
-    margin-left: 1em;
-  }
-}
+  .aspect-list {
+    @extend %list-reset;
+    line-height: 1;
+    margin: 0 auto;
+    display: table;
 
-.about-us {
-  @extend .page-section;
-  background: #F2F3F3;
-  color: #3A4145;
-  font-size: 115%;
-  min-height: 50vmin;
-  padding: 1em 2em 2em;
-  margin-top: 1em; // negate top arrow
+    .aspect {
+      float: left;
+    }
 
-  @include respond-to(medium-screen) {
-    font-size: 100%;
-    min-height: 0;
-  }
-}
-
-.who-we-are {
-  border-right: 1px solid #CCC;
-  width: 50%;
-  padding-right: 2em;
-  margin-right: 2em;
-  float: left;
-
-  @include respond-to(medium-screen) {
-    padding-right: 1em;
-    margin-right: 1em;
-  }
-
-  @include respond-to(small-screen) {
-    border-right: none;
-    border-bottom: 1px solid #CCC;
-    width: auto;
-    padding-right: 0;
-    padding-bottom: 1em;
-    margin-right: 0;
-    margin-bottom: 1em;
-    float: none;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 2em;
+    .aspect + .aspect {
+      border-left: 1px solid #777;
+      padding-left: 1em;
+      margin-left: 1em;
+    }
   }
 }
 
 .how-we-roll {
-  display: table;
+  background: $copper-rust;
+  text-shadow: 0 1px rgba(0,0,0,0.25);
+  font-size: 150%;
+  text-align: center;
+  padding: 2em 1em;
 
   @include respond-to(small-screen) {
-    text-align: center;
-    display: block;
+    font-size: 100%;
   }
 
   h2 {
-    text-align: center;
-    margin-bottom: 2em;
+    margin-top: 0;
   }
 
   .features {
@@ -162,12 +119,7 @@
   }
 
   .features li {
-    float: left;
-
-    @include respond-to(small-screen) {
-      float: none;
-      display: inline-block;
-    }
+    display: inline-block;
 
     @include respond-to(tiny-screen) {
       margin-top: 2em;
@@ -187,26 +139,65 @@
     font-size: 400%;
     text-align: center;
     display: block;
-    margin: 0.25em 0;
+    margin: 0.25em 0 0.375em;
+  }
+}
+
+.about-us {
+  background: #ECEDED;
+  color: #3A4145;
+  font-size: 115%;
+  padding: 5em 2em;
+
+  .about-us-content {
+    width: 75em;
+    margin: 0 auto;
+
+    @include respond-to(medium-screen) {
+      width: 100%;
+    }
+  }
+
+  @include respond-to(small-screen) {
+    font-size: 100%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
+
+.who-we-are {
+  border-right: 1px solid #CCC;
+  width: 50%;
+  padding-right: 2em;
+  margin-right: 2em;
+  float: left;
+
+  @include respond-to(medium-screen) {
+    border-right: none;
+    border-bottom: 1px solid #CCC;
+    width: auto;
+    padding-right: 0;
+    padding-bottom: 1em;
+    margin-right: 0;
+    margin-bottom: 1em;
+    float: none;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2em;
   }
 }
 
 .services {
-  @extend .page-section;
-  background: #373739;
-  text-align: center;
-  min-height: 50vmin;
   padding-bottom: 2em;
 
-  h2 {
-    border-bottom: 1px solid #444;
-    line-height: 0;
-    padding-top: 1em;
+  @include respond-to(medium-screen) {
+    text-align: center;
   }
 
-  h2 span {
-    background: #373739;
-    padding: 0 1em;
+  h2 {
+    text-align: center;
   }
 
   .services-list {
@@ -220,7 +211,7 @@
   }
 
   .service {
-    margin-right: 3em;
+    margin-right: 1em;
     display: inline-block;
     vertical-align: top;
 
@@ -251,33 +242,23 @@
   }
 }
 
-.contact-us {
-  padding-left: 7em;
-  padding-right: 7em;
-  margin: 2em auto 0;
-  display: table;
-}
-
 .get-in-touch {
-  @extend .page-section;
   background: #404449;
   color: #F2F2F3;
+  text-shadow: 0 1px rgba(0,0,0,0.25);
   font-size: 115%;
   text-align: center;
-  min-height: 100vmin;
-  padding: 1em;
+  width: 30em;
+  padding: 2em 1em;
+  margin: 0 auto;
   position: relative;
 
   @include respond-to(medium-screen) {
     font-size: 100%;
   }
 
-  .page-section-content {
-    width: 30em;
-
-    @include respond-to(tiny-screen) {
-      width: 100%;
-    }
+  @include respond-to(tiny-screen) {
+    width: 100%;
   }
 
   h2 {
@@ -310,7 +291,7 @@
   margin: 1em 0;
 
   .squared-cross {
-    color: #6C607C;
+    color: $copper-rust;
     vertical-align: middle;
   }
 }
