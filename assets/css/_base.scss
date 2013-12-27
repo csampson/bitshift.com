@@ -1,4 +1,6 @@
 $copper-rust: #954747;
+$lotus: #7E3D3D;
+$matrix: #B95A5A;
 
 * {
   @include box-sizing(border-box);
@@ -28,6 +30,10 @@ a {
   border-bottom: 1px dotted;
   color: inherit;
   text-decoration: none;
+
+  &:hover, &:focus {
+    border-bottom-color: $matrix;
+  }
 }
 
 
@@ -45,7 +51,8 @@ a {
 }
 
 .btn {
-  box-shadow: 0 -5px 0 0 #7E3D3D inset;
+  @include transition(all 0.15s linear);
+  box-shadow: 0 -5px 0 0 $lotus inset;
   border: none;
   background: $copper-rust;
   color: #FFF;
@@ -55,4 +62,13 @@ a {
   padding: 1em 2em;
   margin: 0;
   display: inline-block;
+
+  &:hover, &:focus {
+    box-shadow: 0 -5px 0 0 lighten($lotus, 2.5%) inset;
+    background: lighten($copper-rust, 2.5%);
+  }
+}
+
+.minimal-logo {
+  border: none;
 }
