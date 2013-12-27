@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/assetpack'
 require 'sinatra/formkeeper'
+require 'mail'
+
+require_relative './config/mail'
 
 class App < Sinatra::Base
   register Sinatra::AssetPack
@@ -27,17 +30,23 @@ class App < Sinatra::Base
   end
 
   post '/contact' do
-    form do
+    contact_form = form do
       filters :strip
       field   :name,    :present => true
       field   :email,   :present => true, :email => true
       field   :message, :present => true
     end
 
-    if form.failed?
+    if contact_form.failed?
       fill_in_form erb(:index)
     else
-      # TODO: send email
+      Mail.deliver do
+        from    contact_form[:email]
+        to      ENV['CONTACT_EMAIL']
+        subject "BitShift communication from #{contact_form[:name]}"
+        body    contact_form[:message]
+      end
+
       erb(:message_sent)
     end
   end
