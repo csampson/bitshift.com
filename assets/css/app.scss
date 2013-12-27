@@ -6,69 +6,68 @@
 
 .introduction {
   @extend .page-section;
-  background: #404449;
   min-height: 100vmin;
   padding: 1em 1em 2em;
   position: relative;
-}
 
-.introduction::after {
-  content: '';
-  border-left: 1em solid transparent;
-  border-right: 1em solid transparent;
-  border-top: 0.5em solid #404449;
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-left: -1em;
-  left: 50%;
-  top: 100%;
-}
-
-.introduction-header {
-  text-align: center;
-  padding-bottom: 2em;
-
-  @include respond-to(medium-screen) {
-    padding: 2em 0;
+  &::after {
+    content: '';
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-top: 0.5em solid #404449;
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -1em;
+    left: 50%;
+    top: 100%;
   }
-}
 
-.introduction-header p {
-  margin: 0;
-}
+  .introduction-header {
+    text-align: center;
+    padding-bottom: 2em;
 
-.introduction-header .spiel {
-  text-shadow: 0 2px rgba(0,0,0,0.25);
-  font-size: 300%;
-  margin: 0 auto;
-  display: table;
+    @include respond-to(medium-screen) {
+      padding: 2em 0;
+    }
+  }
 
-  @include respond-to(small-screen) {
-    text-shadow: none;
+  .introduction-header p {
+    margin: 0;
+  }
+
+  .introduction-header .spiel {
+    text-shadow: 0 2px rgba(0,0,0,0.25);
+    font-size: 300%;
+    margin: 0 auto;
+    display: table;
+
+    @include respond-to(small-screen) {
+      text-shadow: none;
+      font-size: 150%;
+    }
+  }
+
+  .introduction-header .spiel::after {
+    content: '';
+    border-bottom: 1px solid #3C7A4C;
+    width: 35%;
+    margin: 0.5em auto;
+    display: block;
+  }
+
+  .introduction-header .sub-spiel {
     font-size: 150%;
-  }
-}
+    width: 25em;
+    margin: 0 auto 1ex;
 
-.introduction-header .spiel::after {
-  content: '';
-  border-bottom: 1px solid #3C7A4C;
-  width: 35%;
-  margin: 0.5em auto;
-  display: block;
-}
+    @include respond-to(small-screen) {
+      font-size: 100%;
+    }
 
-.introduction-header .sub-spiel {
-  font-size: 150%;
-  width: 25em;
-  margin: 0 auto 1ex;
-
-  @include respond-to(small-screen) {
-    font-size: 100%;
-  }
-
-  @include respond-to(tiny-screen) {
-    width: auto;
+    @include respond-to(tiny-screen) {
+      width: auto;
+    }
   }
 }
 
@@ -88,16 +87,16 @@
   line-height: 1;
   margin: 0 auto;
   display: table;
-}
 
-.aspect-list .aspect {
-  float: left;
-}
+  .aspect {
+    float: left;
+  }
 
-.aspect-list .aspect + .aspect {
-  border-left: 1px solid #777;
-  padding-left: 1em;
-  margin-left: 1em;
+  .aspect + .aspect {
+    border-left: 1px solid #777;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
 }
 
 .about-us {
@@ -137,11 +136,11 @@
     margin-bottom: 1em;
     float: none;
   }
-}
 
-.who-we-are h2 {
-  text-align: center;
-  margin-bottom: 2em;
+  h2 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
 }
 
 .how-we-roll {
@@ -151,45 +150,45 @@
     text-align: center;
     display: block;
   }
-}
 
-.how-we-roll h2 {
-  text-align: center;
-  margin-bottom: 2em;
-}
-
-.how-we-roll ul {
-  @extend %list-reset;
-  @include clearfix;
-}
-
-.how-we-roll li {
-  float: left;
-
-  @include respond-to(small-screen) {
-    float: none;
-    display: inline-block;
+  h2 {
+    text-align: center;
+    margin-bottom: 2em;
   }
 
-  @include respond-to(tiny-screen) {
-    margin-top: 2em;
+  .features {
+    @extend %list-reset;
+    @include clearfix;
+  }
+
+  .features li {
+    float: left;
+
+    @include respond-to(small-screen) {
+      float: none;
+      display: inline-block;
+    }
+
+    @include respond-to(tiny-screen) {
+      margin-top: 2em;
+      display: block;
+    }
+  }
+
+  .features li + li {
+    margin-left: 2em;
+
+    @include respond-to(medium-screen) {
+      margin-left: 0.5em;
+    }
+  }
+
+  .entypo {
+    font-size: 400%;
+    text-align: center;
     display: block;
+    margin: 0.25em 0;
   }
-}
-
-.how-we-roll li + li {
-  margin-left: 2em;
-
-  @include respond-to(medium-screen) {
-    margin-left: 0.5em;
-  }
-}
-
-.how-we-roll .entypo {
-  font-size: 400%;
-  text-align: center;
-  display: block;
-  margin: 0.25em 0;
 }
 
 .services {
@@ -198,57 +197,57 @@
   text-align: center;
   min-height: 50vmin;
   padding-bottom: 2em;
-}
 
-.services h2 {
-  border-bottom: 1px solid #444;
-  line-height: 0;
-  padding-top: 1em;
-}
-
-.services h2 span {
-  background: #373739;
-  padding: 0 1em;
-}
-
-.services .services-list {
-  @extend %list-reset;
-
-  @include respond-to(tiny-screen) {
-    width: 100%;
+  h2 {
+    border-bottom: 1px solid #444;
+    line-height: 0;
     padding-top: 1em;
-    display: table;
   }
-}
 
-.services .service {
-  margin-right: 3em;
-  display: inline-block;
-  vertical-align: top;
-
-  @include respond-to(tiny-screen) {
-    text-align: left;
-    margin-right: 0;
-    display: table-row;
+  h2 span {
+    background: #373739;
+    padding: 0 1em;
   }
-}
 
-.services .service h3 {
-  font-size: 100%;
+  .services-list {
+    @extend %list-reset;
 
-  @include respond-to(tiny-screen) {
-    text-align: right;
-    padding-right: 1em;
-    display: table-cell;
+    @include respond-to(tiny-screen) {
+      width: 100%;
+      padding-top: 1em;
+      display: table;
+    }
   }
-}
 
-.services .service ul {
-  @extend %list-reset;
+  .service {
+    margin-right: 3em;
+    display: inline-block;
+    vertical-align: top;
 
-  @include respond-to(tiny-screen) {
-    display: table-cell;
-    padding-bottom: 1em;
+    @include respond-to(tiny-screen) {
+      text-align: left;
+      margin-right: 0;
+      display: table-row;
+    }
+  }
+
+  .service h3 {
+    font-size: 100%;
+
+    @include respond-to(tiny-screen) {
+      text-align: right;
+      padding-right: 1em;
+      display: table-cell;
+    }
+  }
+
+  .service ul {
+    @extend %list-reset;
+
+    @include respond-to(tiny-screen) {
+      display: table-cell;
+      padding-bottom: 1em;
+    }
   }
 }
 
@@ -272,33 +271,33 @@
   @include respond-to(medium-screen) {
     font-size: 100%;
   }
-}
 
-.get-in-touch .page-section-content {
-  width: 30em;
+  .page-section-content {
+    width: 30em;
 
-  @include respond-to(tiny-screen) {
-    width: 100%;
+    @include respond-to(tiny-screen) {
+      width: 100%;
+    }
   }
-}
 
-.get-in-touch h2 {
-  font-size: 150%;
-  margin: 1em 0 0;
-}
+  h2 {
+    font-size: 150%;
+    margin: 1em 0 0;
+  }
 
-.get-in-touch p {
-  margin: 1ex 0 2em;
-}
+  p {
+    margin: 1ex 0 2em;
+  }
 
-.get-in-touch .btn {
-  width: 100%;
-  padding-left: 10em;
-  padding-right: 10em;
+  .btn {
+    width: 100%;
+    padding-left: 10em;
+    padding-right: 10em;
 
-  @include respond-to(small-screen) {
-    padding-left: 1em;
-    padding-right: 1em;
+    @include respond-to(small-screen) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
   }
 }
 
@@ -316,13 +315,15 @@
   }
 }
 
-.contact-form ul {
-  @extend %list-reset;
-}
+.contact-form {
+  ul {
+    @extend %list-reset;
+  }
 
-.contact-form input, .contact-form textarea {
-  margin: 0 0 1em;
-  width: 100%;
+  input, textarea {
+    margin: 0 0 1em;
+    width: 100%;
+  }
 }
 
 .message-sent {

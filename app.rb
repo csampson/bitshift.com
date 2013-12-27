@@ -13,7 +13,7 @@ class App < Sinatra::Base
     serve '/fonts',  {:from => 'assets/fonts'}
 
     css :app, ['css/app.css']
-    js :app,  ['js/app.js']
+    js  :app, ['js/app.js']
 
     css_compression :sass
   }
