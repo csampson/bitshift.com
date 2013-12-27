@@ -52,7 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon (~> 3.2.x)
+  bourbon
   rack
   rspec
   sass
