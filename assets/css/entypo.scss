@@ -2,16 +2,16 @@
 @include font-face(EntypoSocialRegular, '/fonts/entypo-social');
 
 .entypo {
-	font-family: 'EntypoRegular';
-	font-size: 2em;
-	font-style: normal;
-	font-weight: normal;
+  font-family: 'EntypoRegular';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .entypo-social {
-	font-family: 'EntypoSocialRegular';
-	font-size: 2em;
-	font-weight: normal;
+  font-family: 'EntypoSocialRegular';
+  font-size: 2em;
+  font-weight: normal;
 }
 
 .entypo.phone:before{ content:'\1F4DE'; }
