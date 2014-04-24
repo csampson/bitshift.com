@@ -7,3 +7,5 @@ gem 'sinatra-assetpack'
 gem 'sass'
 gem 'bourbon'
 gem 'sinatra-formkeeper'
+gem 'mail'
+
